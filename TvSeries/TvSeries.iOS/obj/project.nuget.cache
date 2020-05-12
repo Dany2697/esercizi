@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "i6IJ1Fnhf30tAN88V/l712Jk3evToMgrb68/2O9GX0u8okG4elcZuXxskhEL1VJ0rKZ+V00yUWkp+1QJwjMJjg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dany2\\.nuget\\packages\\carouselview\\7.0.3.1\\carouselview.7.0.3.1.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\carouselview.formsplugin\\5.2.0\\carouselview.formsplugin.5.2.0.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\traktapisharp\\0.11.0\\traktapisharp.0.11.0.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
+    "C:\\Users\\dany2\\.nuget\\packages\\xamarin.forms.carouselview\\2.3.0-pre2\\xamarin.forms.carouselview.2.3.0-pre2.nupkg.sha512"
+  ],
+  "logs": []
+}
