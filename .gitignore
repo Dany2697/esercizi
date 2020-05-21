@@ -338,3 +338,16 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+TvSeries/TvSeries.iOS/obj/
+
+TvSeries/TvSeries.Android/bin/
+
+TvSeries/TvSeries.Android/obj/
+
+TvSeries/TvSeries/bin/
+
+TvSeries/TvSeries/obj/
+
+TvSeries/FanartTvLibrary/obj/
+
+TvSeries/FanartTvLibrary/bin/
