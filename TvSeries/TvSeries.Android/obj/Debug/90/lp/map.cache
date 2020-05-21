@@ -1,7 +1,3 @@
-CarouselView
-CarouselView.FormsPlugin.Android
-Com.Android.DeskClock
-Com.ViewPagerIndicator
 FormsViewGroup
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
@@ -41,6 +37,5 @@ Xamarin.Android.Support.Vector.Drawable
 Xamarin.Android.Support.VersionedParcelable
 Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
-Xamarin.Forms.CarouselView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform

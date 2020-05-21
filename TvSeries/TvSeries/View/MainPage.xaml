@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TvSeries.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+                <Button Text="Signin" x:Name="accedi" Clicked="Accedi_Clicked"  HorizontalOptions="Start" />
+                <Button Text="Profilo" x:Name="profilo"  HorizontalOptions="EndAndExpand" Clicked="Profilo_Clicked" IsEnabled="False" />
+            </StackLayout>
+            <CarouselView x:Name="MyCarousel" ItemsSource="{Binding SerieTvModels}" PeekAreaInsets="50" >
+                <CarouselView.ItemTemplate>
+                    <DataTemplate >
+                        <StackLayout >
+                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="400" CornerRadius="20" 
+                                   VerticalOptions="CenterAndExpand" BackgroundColor="DarkRed"  >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
+                                                           CommandParameter="{Binding Id}">
+                                    </TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                    <Image Source ="{Binding ImagePath}"
+                                               Aspect="AspectFill"
+                                               HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

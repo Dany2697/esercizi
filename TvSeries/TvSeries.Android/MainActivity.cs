@@ -4,10 +4,11 @@ using Android.App;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Android.Content.PM;
 
 namespace TvSeries.Droid
 {
-    [Activity(Label = "TvSeries", Theme = "@style/MainTheme")]
+    [Activity(Label = "TvSeries", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

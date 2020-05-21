@@ -11,15 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CarouselView" Version="7.0.3.1" />
-    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="TraktApiSharp" Version="0.11.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Trakt.NET" Version="1.0.0-beta" />
+    <PackageReference Include="TVDBSharp" Version="4.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="TvSeriesPage.xaml">
+    <ProjectReference Include="..\FanartTvLibrary\FanartTv.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\ProfiloPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TvSeriesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

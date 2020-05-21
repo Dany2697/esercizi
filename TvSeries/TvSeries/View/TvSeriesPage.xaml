@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TvSeries.TvSeriesPage"
+             Title="TvSeriesPage">
+    <ContentPage.Content>
+        <StackLayout  x:Name="outerStack" BackgroundColor="DarkRed"  >
+            <Image Source="{Binding ImagePath}" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <StackLayout WidthRequest="1000" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="{Binding Title}" HorizontalOptions="Start" 
+                       VerticalOptions="Center" FontSize="Title" FontAttributes="Bold" />
+                        <Label Text="{Binding Year}" FontSize="Subtitle" FontAttributes="Italic" VerticalTextAlignment="End" />
+                    </StackLayout>
+                    <Label Text="{Binding Description}" HorizontalOptions="Start" />
+                </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
