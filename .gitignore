@@ -351,3 +351,5 @@ TvSeries/TvSeries/obj/
 TvSeries/FanartTvLibrary/obj/
 
 TvSeries/FanartTvLibrary/bin/
+
+TvSeries/TvSeries.Android/Resources/Resource.designer.cs
