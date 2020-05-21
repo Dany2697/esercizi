@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oXdso4Vww8RCun0MkK24ZNZPm2zanQHXoeEza9XaO3tVs6dWe4kD/EmsjShzvc/kI7b62DPCo89tOGb2uUictQ==",
+  "dgSpecHash": "OVVZgwBYRysTTbt7/DksVRaXiCQYVtCgW6swWTQauZHaukvJlz1OFQIUiy/TQSUJ4mvsTW+BNWhsURkRRZC1wQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
+  "projectFilePath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dany2\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\dany2\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

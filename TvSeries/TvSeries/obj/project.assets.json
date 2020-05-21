@@ -752,11 +752,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj",
+      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj",
       "projectName": "TvSeries",
-      "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj",
+      "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj",
       "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\obj\\",
+      "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -776,8 +776,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
-              "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj"
+            "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
+              "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj"
             }
           }
         }

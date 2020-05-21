@@ -3,14 +3,10 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "TvSeries.Android.dll" comes first in this list. */
 		"TvSeries.Android.dll",
-		"CarouselView.dll",
-		"CarouselView.FormsPlugin.Abstractions.dll",
-		"CarouselView.FormsPlugin.Android.dll",
-		"Com.Android.DeskClock.dll",
-		"Com.ViewPagerIndicator.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
-		"TraktApiSharp.dll",
+		"Trakt.NET.dll",
+		"TVDBSharp.dll",
 		"TvSeries.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
@@ -50,11 +46,11 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.VersionedParcelable.dll",
 		"Xamarin.Android.Support.ViewPager.dll",
 		"Xamarin.Essentials.dll",
-		"Xamarin.Forms.CarouselView.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"FanartTv.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

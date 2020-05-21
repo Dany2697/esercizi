@@ -25,6 +25,7 @@ namespace TvSeries
             if (width > height)
             {
                 outerStack.Orientation = StackOrientation.Horizontal;
+                
             }
             else outerStack.Orientation = StackOrientation.Vertical;
         }

@@ -5253,11 +5253,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
+      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
       "projectName": "TvSeries.Android",
-      "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
+      "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
       "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\obj\\",
+      "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5278,8 +5278,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj": {
-              "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj"
+            "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj": {
+              "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj"
             }
           }
         }

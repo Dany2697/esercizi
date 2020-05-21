@@ -1,4 +1,7 @@
 ﻿
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TvSeries
 {
     public class SerieTvModel
@@ -9,6 +12,8 @@ namespace TvSeries
         public string Description { get; set; }
         public string Id { get; set; }
         public string Year { get; set; }
+
+        public IEnumerable<string> Genres { get; set; }
        
 
 

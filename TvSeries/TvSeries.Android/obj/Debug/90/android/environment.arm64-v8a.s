@@ -50,8 +50,8 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.4,"aMS",@progbits,1
 	.type	.L.str.4, @object
 .L.str.4:
-	.asciz	"major=marksweep-conc"
-	.size	.L.str.4, 21
+	.asciz	"bridge-implementation=tarjan,nursery-size=128m,soft-heap-limit=512m"
+	.size	.L.str.4, 68
 	.section	.rodata..L.str.5,"aMS",@progbits,1
 	.type	.L.str.5, @object
 .L.str.5:
@@ -70,7 +70,7 @@ mono_aot_mode_name:
 	.section	.rodata..L.str.8,"aMS",@progbits,1
 	.type	.L.str.8, @object
 .L.str.8:
-	.asciz	"6460b5c4-a04b-4eaf-bc93-25c4f0dfa31c"
+	.asciz	"5ceeb65b-c422-49b0-b8fa-ee63d5f72a3c"
 	.size	.L.str.8, 37
 	.section	.rodata..L.str.9,"aMS",@progbits,1
 	.type	.L.str.9, @object

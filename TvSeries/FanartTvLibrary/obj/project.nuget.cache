@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yopDLpoCvdmunqP0rtuRaLiiZyUparLSqN6lXMr02HmE5qOwvC4uDvDqPsjoKLOCBlhwmV7Ax0avJOHhBP4Kpg==",
+  "dgSpecHash": "TT0h5yJdvJcdaZzVTBP/elKRKnQOkeHck4/KHM/HC+2ffWsu6GQz9XrJbYwHBhtLc56SFfDiogvtYkBbw5FjyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
+  "projectFilePath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dany2\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\dany2\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

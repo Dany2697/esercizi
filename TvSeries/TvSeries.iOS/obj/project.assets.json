@@ -5793,11 +5793,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
       "projectName": "TvSeries.iOS",
-      "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
+      "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.iOS\\TvSeries.iOS.csproj",
       "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.iOS\\obj\\",
+      "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5818,8 +5818,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj": {
-              "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj"
+            "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj": {
+              "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj"
             }
           }
         }

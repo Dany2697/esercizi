@@ -6,7 +6,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="TvSeries.Android" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:label="TvSeries" android:theme="@style/MainTheme" android:name="crc64cc4ad25efca6322d.MainActivity" />
+    <activity android:configChanges="orientation|screenSize" android:label="TvSeries" android:theme="@style/MainTheme" android:name="crc64cc4ad25efca6322d.MainActivity" />
     <activity android:noHistory="true" android:theme="@style/MyTheme.Splash" android:name="crc64cc4ad25efca6322d.SplashScreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

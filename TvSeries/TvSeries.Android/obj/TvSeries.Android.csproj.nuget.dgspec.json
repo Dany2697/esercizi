@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj": {}
+    "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
+    "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
+        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
         "projectName": "FanartTv",
-        "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
+        "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj",
         "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\obj\\",
+        "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj": {
+    "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
+        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
         "projectName": "TvSeries.Android",
-        "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
+        "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\TvSeries.Android.csproj",
         "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries.Android\\obj\\",
+        "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -91,8 +91,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj": {
-                "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj"
+              "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj": {
+                "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj"
               }
             }
           }
@@ -129,14 +129,14 @@
         }
       }
     },
-    "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj": {
+    "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj",
+        "projectUniqueName": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj",
         "projectName": "TvSeries",
-        "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\TvSeries.csproj",
+        "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\TvSeries.csproj",
         "packagesPath": "C:\\Users\\dany2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\TvSeries\\obj\\",
+        "outputPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\TvSeries\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -156,8 +156,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
-                "projectPath": "C:\\Users\\dany2\\source\\repos\\TvSeries\\FanartTvLibrary\\FanartTv.csproj"
+              "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj": {
+                "projectPath": "C:\\Users\\dany2\\source\\repos\\esercizi\\TvSeries\\FanartTvLibrary\\FanartTv.csproj"
               }
             }
           }
