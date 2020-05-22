@@ -9,6 +9,7 @@ using FanartTv;
 using FanartTv.TV;
 using System;
 using System.Linq;
+using FanartTv.Types;
 
 namespace TvSeries
 {
@@ -35,7 +36,7 @@ namespace TvSeries
 
             foreach (ITraktTrendingShow trendingShow in trendingShowsTop10)
             {
-                Show showImage = new Show(trendingShow.Ids.Tvdb.ToString(), API.Key, API.cKey);
+                TvData showImages = await Show.GetShowImagesAsync(trendingShow.Ids.Tvdb.ToString());
                
 
 
@@ -43,7 +44,7 @@ namespace TvSeries
                 {
                     Title = trendingShow.Title,
                      Id = trendingShow.Ids.Slug,
-                     ImagePath = showImage.List.Tvposter[0].Url
+                     ImagePath = showImages.Tvposter[0].Url.Replace("/fanart","/preview")
 
 
                 });
@@ -71,14 +72,14 @@ namespace TvSeries
             TraktResponse<ITraktShow> show = await client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());
             var showInfo = show.Value;
 
-            Show showImage = new Show(showInfo.Ids.Tvdb.ToString(), API.Key, API.cKey);
+            TvData showImages = await Show.GetShowImagesAsync(showInfo.Ids.Tvdb.ToString());
 
             SerieTvModel serieTvModel = new SerieTvModel()
             {
                 Title = showInfo.Title,
                 Description = showInfo.Overview,
                 Year = showInfo.Year.ToString(),
-                ImagePath = showImage.List.Tvposter[0].Url,
+                ImagePath = showImages.Tvposter[0].Url.Replace("/fanart", "/preview"),
                 Genres = showInfo.Genres
                
             };

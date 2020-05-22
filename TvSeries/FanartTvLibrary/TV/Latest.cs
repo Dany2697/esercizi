@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading.Tasks;
 using FanartTv.Types;
 
 namespace FanartTv.TV
@@ -12,45 +13,14 @@ namespace FanartTv.TV
   /// </summary>
   public class Latest
   {
-    /// <summary>
-    /// List of images for Latest Shows
-    /// </summary>
-    public List<TvLatest> List { get; set; }
-
-    /// <summary>
-    /// Get images for Latest Shows
-    /// </summary>
-    public Latest()
-    {
-      List = Info(API.Key, API.cKey);
-    }
-
-    /// <summary>
-    /// Get images for Latest Shows
-    /// </summary>
-    /// <param name="apiKey">Users api_key</param>
-    public Latest(string apiKey)
-    {
-      List = Info(apiKey, API.cKey);
-    }
-
-    /// <summary>
-    /// Get images for Latest Shows
-    /// </summary>
-    /// <param name="apiKey">Users api_key</param>
-    /// <param name="clientKey">Users client_key</param>
-    public Latest(string apiKey, string clientKey)
-    {
-        List = Info(apiKey, clientKey);
-    }
-
+    
     /// <summary>
     /// API Result
     /// </summary>
     /// <param name="apiKey">Users api_key</param>
     /// <param name="clientKey">Users client_key</param>
     /// <returns>List of images for Latest Shows</returns>
-    private static List<TvLatest> Info(string apiKey, string clientKey)
+    public static async Task<List<TvLatest>> GetTvLatestsAsync()
     {
       try
       {
@@ -58,9 +28,9 @@ namespace FanartTv.TV
         API.ErrorOccurred = false;
         API.ErrorMessage = string.Empty;
 
-        var json = clientKey != "" ? Helper.Json.GetJson(API.Server + "tv/latest" + "?api_key=" + apiKey) : Helper.Json.GetJson(API.Server + "tv/latest" + "?api_key=" + apiKey + "&client_key=" + clientKey);
-
-        if (API.ErrorOccurred)
+       
+                var json = await Helper.Json.GetJson(API.Server + "tv/latest" +  "?api_key=" + API.Key);
+                if (API.ErrorOccurred)
           return new List<TvLatest>();
 
         using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))

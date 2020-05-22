@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace FanartTv.Helper
 {
@@ -14,7 +15,7 @@ namespace FanartTv.Helper
     /// </summary>
     /// <param name="url">The Url of the Website</param>
     /// <returns>Jsonstring</returns>
-    public static string GetJson(string url)
+    public static async Task<string> GetJson(string url)
     {
       try
       {
@@ -25,7 +26,7 @@ namespace FanartTv.Helper
         request.Proxy = WebRequest.DefaultWebProxy;
         request.Credentials = CredentialCache.DefaultCredentials;
         request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-        WebResponse response = request.GetResponse();
+       WebResponse response = await request.GetResponseAsync();
         var reader = new StreamReader(response.GetResponseStream());
         return reader.ReadToEnd();
       }

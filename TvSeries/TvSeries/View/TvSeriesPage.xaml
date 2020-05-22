@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <ScrollView >
             <StackLayout  x:Name="outerStack" BackgroundColor="DarkRed"  >
-                <Image Source="{Binding ImagePath}" HorizontalOptions="Start" VerticalOptions="Start"/>
+                <Image Source="{Binding ImagePath}" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="300" />
                 <StackLayout WidthRequest="1000" HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal" >
                         <Label Text="{Binding Title}" HorizontalOptions="Start" 
@@ -19,7 +19,7 @@
                     <StackLayout BindableLayout.ItemsSource="{Binding Genres}" Orientation="Horizontal"  >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding}" FontAttributes="Italic"/>
+                                <Label Text="{Binding}" FontAttributes="Italic" VerticalTextAlignment="Start"/>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
