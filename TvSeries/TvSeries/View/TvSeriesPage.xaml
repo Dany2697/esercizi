@@ -7,25 +7,33 @@
              x:Class="TvSeries.TvSeriesPage"
              Title="TvSeriesPage">
     <ContentPage.Content>
-        <ScrollView >
+        
             <StackLayout  x:Name="outerStack" BackgroundColor="DarkRed"  >
-                <Image Source="{Binding ImagePath}" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="300" />
+            
+                <ContentView >
+                   
+                <Image Source="{Binding ImagePath}" HorizontalOptions="CenterAndExpand" Aspect="AspectFill"  x:Name="immagine" />
+                    
+                </ContentView>
+           
+            <ScrollView>
                 <StackLayout WidthRequest="1000" HorizontalOptions="FillAndExpand">
                     <StackLayout Orientation="Horizontal" >
                         <Label Text="{Binding Title}" HorizontalOptions="Start" 
                        VerticalOptions="Center" FontSize="Title" FontAttributes="Bold" />
                         <Label Text="{Binding Year}" FontSize="Subtitle" FontAttributes="Italic" VerticalTextAlignment="End" />
                     </StackLayout>
-                    <StackLayout BindableLayout.ItemsSource="{Binding Genres}" Orientation="Horizontal"  >
+                    <StackLayout BindableLayout.ItemsSource="{Binding Genres}" Orientation="Horizontal" >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding}" FontAttributes="Italic" VerticalTextAlignment="Start"/>
+                                <Label Text="{Binding}" FontAttributes="Italic"  />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
                     <Label Text="{Binding Description}" HorizontalOptions="Start" />
                 </StackLayout>
+            </ScrollView>
         </StackLayout>
-        </ScrollView>
+       
     </ContentPage.Content>
 </ContentPage>

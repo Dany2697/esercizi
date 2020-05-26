@@ -12,25 +12,55 @@
                 <Button Text="Signin" x:Name="accedi" Clicked="Accedi_Clicked"  HorizontalOptions="Start" />
                 <Button Text="Profilo" x:Name="profilo"  HorizontalOptions="EndAndExpand" Clicked="Profilo_Clicked" IsEnabled="False" />
             </StackLayout>
-            <CarouselView x:Name="MyCarousel" ItemsSource="{Binding SerieTvModels}" PeekAreaInsets="50" >
-                <CarouselView.ItemTemplate>
+            <CarouselView x:Name="MyCarousel" ItemsSource="{Binding SerieTvModels}" PeekAreaInsets="50"    >
+                <CarouselView.ItemTemplate >
                     <DataTemplate >
-                        <StackLayout >
-                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="400" CornerRadius="20" 
-                                   VerticalOptions="CenterAndExpand" BackgroundColor="DarkRed"  >
+                        
+
+                            <Grid ColumnSpacing="0" RowSpacing="0"  >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                           
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
+                                                           CommandParameter="{Binding Id}">
+                                    </TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+
+                            <ContentView>
+                                <Image Source ="{Binding ImagePath}" />
+                            </ContentView>
+
+
+
+
+
+
+
+                        </Grid>
+                            
+                           <!--<Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
+                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center"    >
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
                                                            CommandParameter="{Binding Id}">
                                     </TapGestureRecognizer>
                                 </Frame.GestureRecognizers>
-                                <StackLayout>
-                                    <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                
                                     <Image Source ="{Binding ImagePath}"
                                                Aspect="AspectFill"
                                                HorizontalOptions="Center"/>
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
+                                
+                            </Frame> -->
+
+                        
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>

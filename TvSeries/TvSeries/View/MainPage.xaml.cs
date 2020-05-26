@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using System;
 using TvSeries.ViewModel;
+using System.Collections.Generic;
 
 namespace TvSeries
 {
@@ -13,6 +14,8 @@ namespace TvSeries
     {
 
         MainPageViewModel mainPageViewModel = new MainPageViewModel();
+
+        
 
         public MainPage() 
         {
@@ -74,7 +77,17 @@ namespace TvSeries
 
         }
 
-        
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            if(height > width)
+            {
+                MyCarousel.HorizontalOptions = LayoutOptions.Center;
+                
+            } 
+        }
+
+
 
     }
 }

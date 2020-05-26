@@ -16,12 +16,13 @@ namespace TvSeries.Droid
 
 
             base.OnCreate(savedInstanceState);
-
+            
             Forms.SetFlags("CollectionView_Experimental");
             Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
+           
             LoadApplication(new App());
+           
 
         }
 
@@ -35,8 +36,9 @@ namespace TvSeries.Droid
         protected override void OnResume()
         {
             base.OnResume();
-
+            
             Platform.OnResume();
+
         }
     }
 }
