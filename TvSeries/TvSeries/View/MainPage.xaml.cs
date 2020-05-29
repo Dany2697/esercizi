@@ -31,7 +31,7 @@ namespace TvSeries
             
             base.OnAppearing();
            
-            mainPageViewModel.SerieTvModels = await SerieTvSeed.GetTopTen();
+            mainPageViewModel.SerieTvModels = await SerieTvSeed.GetTopTenAsync();
             BindingContext = mainPageViewModel;
             
 

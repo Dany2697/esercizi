@@ -31,7 +31,19 @@
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
                     <Label Text="{Binding Description}" HorizontalOptions="Start" />
+                    <Picker Title="Select Season"
+                            ItemsSource="{Binding Seasons}"
+                            ItemDisplayBinding="{Binding Title}"
+                            SelectedIndexChanged="OnSelectedIndexChanged">
+                      
+                    </Picker>
+                    <Picker Title="Select Episode"
+                            ItemsSource="{Binding Episodes}"
+                            ItemDisplayBinding="{Binding Title}">
+                        
+                    </Picker>
                 </StackLayout>
+                
             </ScrollView>
         </StackLayout>
        

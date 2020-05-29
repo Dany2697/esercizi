@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TvSeries.View;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TvSeries
@@ -33,10 +34,10 @@ namespace TvSeries
         }
 
 
-
-
-
-
+        private async void OnSelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new SeasonPage());
+        }
     }
 }
 

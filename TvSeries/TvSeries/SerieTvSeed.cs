@@ -11,6 +11,10 @@ using System;
 using System.Linq;
 using FanartTv.Types;
 using TVDBSharp;
+using Xamarin.Forms.Internals;
+using TvSeries.Model;
+using System.Diagnostics;
+using TraktNet.Objects.Get.Seasons;
 
 namespace TvSeries
 {
@@ -20,97 +24,143 @@ namespace TvSeries
 
         public static TVDB tvdb = new TVDB("b88ab70eb1e17a369cbe5f494f30cb9c");
 
+
+
         public static TVDBSharp.Models.Show showImages = new TVDBSharp.Models.Show();
 
 
 
 
-        public static async Task<List<SerieTvModel>> GetTopTen()
+        public static async Task<List<PageModel>> GetTopTenAsync()
         {
-            
 
-            
 
-            List<SerieTvModel> tempList = new List<SerieTvModel>();
 
-            List<string> images = new List<string>();
-            
+
+            List<PageModel> tempList = new List<PageModel>();
+
+            List<SerieTvModel> lista = new List<SerieTvModel>();
+
             TraktPagedResponse<ITraktTrendingShow> trendingShowsTop10 = await client.Shows.GetTrendingShowsAsync(new TraktExtendedInfo().SetFull());
 
-           
+
 
             foreach (ITraktTrendingShow trendingShow in trendingShowsTop10)
             {
                 
-                  showImages = await tvdb.GetShow((int)trendingShow.Ids.Tvdb);
+                    showImages = await tvdb.GetShow((int)trendingShow.Ids.Tvdb);
+                
+               
                 
 
-                
-                tempList.Add(new SerieTvModel
+                    lista.Add(new SerieTvModel
+                    {
+
+                        Id = trendingShow.Ids.Slug,
+                        ImagePath = showImages.Poster.AbsoluteUri.Replace("http", "https") 
+
+
+                    });
+
+                if (lista.Count == 4)
                 {
-                    Title = trendingShow.Title,
-                    Id = trendingShow.Ids.Slug,
-                    ImagePath = showImages.Poster.AbsoluteUri.Replace("http", "https")
-
-
-                }); 
-
-
+                    tempList.Add(new PageModel(lista));
+                    lista = new List<SerieTvModel>();
+                }
 
             }
+                
+
+                
+
+            
+                if (lista.Count < 4 && lista.Count > 0)
+                {
+                    tempList.Add(new PageModel(lista));
+                }
+
 
             return tempList;
-              
 
 
         }
 
-            
 
 
-    public static async Task<SerieTvModel> GetSingleTvSeries(string Id)
+
+        public static async Task<SerieTvModel> GetSingleTvSeriesAsync(string Id)
         {
 
 
 
-            TraktResponse<ITraktShow> show = await client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());
+            var show = await client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());  
+            var seasons = await client.Seasons.GetAllSeasonsAsync(Id, new TraktExtendedInfo().SetFull());
+            
+            // await Task.WhenAny<TraktResponse<ITraktShow>>(show, seasons);
+
             var showInfo = show.Value;
-            try { 
-             showImages = await tvdb.GetShow((int)showInfo.Ids.Tvdb);
-             }
-                catch (Exception ex)
+
+            var Episodes = await tvdb.GetEpisodes((int)showInfo.Ids.Tvdb);
+
+            showImages = await tvdb.GetShow((int)showInfo.Ids.Tvdb);
+            
+            var listSeason = new List<SeasonModel>();
+            foreach(var season in seasons)
+            {
+                listSeason.Add(new SeasonModel
                 {
-                    Console.WriteLine(ex.Message);
+                    Title = season.Title,
+                    
+
                 }
 
-        SerieTvModel serieTvModel = new SerieTvModel()
+                ); 
+            }
+            var listEpisode = new List<EpisodeModel>();
+
+            foreach(var episode in Episodes)
+            {
+                listEpisode.Add(new EpisodeModel
+                {
+                    Title = episode.EpisodeName,
+                    Image = episode.EpisodeImage.AbsoluteUri.Replace("http","https"),
+                    Overview = episode.Overview
+                });
+            }
+
+            SerieTvModel serieTvModel = new SerieTvModel()
             {
                 Title = showInfo.Title,
                 Description = showInfo.Overview,
                 Year = showInfo.Year.ToString(),
-               // ImagePath = showImages.Poster.AbsoluteUri.Replace("http", "https"),
-                Genres = showInfo.Genres
-               
+                ImagePath = showImages.Poster.AbsoluteUri.Replace("http", "https"),
+                Genres = showInfo.Genres,
+                Seasons = listSeason,
+                Episodes = listEpisode
+                
+
             };
 
             return serieTvModel;
         }
 
-        public static async Task<ProfiloModel> GetInfoUser()
+        public static async Task<ProfiloModel> GetInfoUserAsync()
         {
             TraktResponse<ITraktUser> traktUser = await client.Users.GetUserProfileAsync("me", new TraktExtendedInfo().SetFull());
-            
+
             var userInfo = traktUser.Value;
 
             ProfiloModel profiloModel = new ProfiloModel()
             {
                 Nome = userInfo.Name,
                 Username = userInfo.Username,
-                Citta = userInfo.Location
+                Citta = userInfo.Location,
+                Eta = userInfo.Age
+
             };
             return profiloModel;
         }
 
-       
+
     }
 }

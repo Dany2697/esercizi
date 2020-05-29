@@ -4,9 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:converter="clr-namespace:TvSeries"
              x:Class="TvSeries.MainPage"
              Title="TV SERIES">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:NullToVisibilityConverter x:Key="nullToVisibilityConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BackgroundColor="Black">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
@@ -28,18 +33,68 @@
                                     <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                           
-                                <Grid.GestureRecognizers>
+
+                            
+                            <Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
+                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center" IsVisible="{Binding Items, Converter={StaticResource  nullToVisibilityConverter},ConverterParameter=0}" Grid.Row="0" Grid.Column="0"  >
+                                <Frame.GestureRecognizers>
                                     <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
-                                                           CommandParameter="{Binding Id}">
+                                                           CommandParameter="{Binding Items[0].Id}">
                                     </TapGestureRecognizer>
-                                </Grid.GestureRecognizers>
+                                </Frame.GestureRecognizers>
 
-                            <ContentView>
-                                <Image Source ="{Binding ImagePath}" />
-                            </ContentView>
+                                <Image Source ="{Binding Items[0].ImagePath}"
+                                               Aspect="AspectFill"
+                                               HorizontalOptions="Center" />
+
+                            </Frame>
+
+                            
+                            <Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
+                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center"  IsVisible="{Binding Items , Converter={StaticResource  nullToVisibilityConverter},ConverterParameter=1}" Grid.Row="0" Grid.Column="1" >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
+                                                           CommandParameter="{Binding Items[1].Id}">
+                                    </TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+
+                                <Image Source ="{Binding Items[1].ImagePath}"
+                                               Aspect="AspectFill"
+                                               HorizontalOptions="Center" />
+
+                            </Frame>
 
 
+                            
+                            <Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
+                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center"  IsVisible="{Binding Items , Converter={StaticResource  nullToVisibilityConverter},ConverterParameter=2}" Grid.Row="1" Grid.Column="0" >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
+                                                           CommandParameter="{Binding Items[2].Id}" >
+                                    </TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                
+
+                                <Image Source ="{Binding Items[2].ImagePath}"
+                                               Aspect="AspectFill"
+                                               HorizontalOptions="Center" />
+
+                            </Frame>
+
+                            
+                            <Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
+                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center" IsVisible="{Binding Items , Converter={StaticResource  nullToVisibilityConverter},ConverterParameter=3}"  Grid.Row="1" Grid.Column="1" >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
+                                                           CommandParameter="{Binding Items[3].Id}" >
+                                    </TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+
+                                <Image Source ="{Binding Items[3].ImagePath}"
+                                               Aspect="AspectFill"
+                                               HorizontalOptions="Center" />
+
+                            </Frame>
 
 
 
@@ -47,19 +102,7 @@
 
                         </Grid>
                             
-                           <!--<Frame BorderColor="Gray" HasShadow="True"  CornerRadius="20" 
-                                   VerticalOptions="Center" BackgroundColor="DarkRed" HorizontalOptions="Center"    >
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer  Command="{Binding BindingContext.MyCommand,Source={x:Reference MyCarousel}}" 
-                                                           CommandParameter="{Binding Id}">
-                                    </TapGestureRecognizer>
-                                </Frame.GestureRecognizers>
-                                
-                                    <Image Source ="{Binding ImagePath}"
-                                               Aspect="AspectFill"
-                                               HorizontalOptions="Center"/>
-                                
-                            </Frame> -->
+                           
 
                         
                     </DataTemplate>

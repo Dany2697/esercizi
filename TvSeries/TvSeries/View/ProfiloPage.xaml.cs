@@ -16,7 +16,7 @@ namespace TvSeries
             base.OnAppearing();
 
            
-            BindingContext = await SerieTvSeed.GetInfoUser();
+            BindingContext = await SerieTvSeed.GetInfoUserAsync();
 
         }
     }
