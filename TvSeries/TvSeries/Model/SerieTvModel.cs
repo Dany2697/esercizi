@@ -17,7 +17,6 @@ namespace TvSeries
 
         public IEnumerable<string> Genres { get; set; }
         public List<SeasonModel> Seasons { get; set; }
-        public List<EpisodeModel> Episodes { get; set; }
 
 
 

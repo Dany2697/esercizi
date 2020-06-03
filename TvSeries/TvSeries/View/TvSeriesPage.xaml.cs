@@ -1,4 +1,11 @@
-﻿using TvSeries.View;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Windows.Input;
+using TraktNet.Objects.Get.Episodes;
+using TraktNet.Objects.Get.Syncs.Activities;
+using TvSeries.Model;
+using TvSeries.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +25,7 @@ namespace TvSeries
 
         public TvSeriesPage()
         {
+            
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -26,17 +34,31 @@ namespace TvSeries
             if (width > height)
             {
                 outerStack.Orientation = StackOrientation.Horizontal;
-                
-                
-                
             }
             else outerStack.Orientation = StackOrientation.Vertical;
         }
 
+      
 
-        private async void OnSelectedIndexChanged(object sender, System.EventArgs e)
+        
+        private  void SeasonPickerSelectedIndexChanged(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new SeasonPage());
+            
+            var season = (SeasonModel)SePicker.SelectedItem;
+            EpPicker.IsEnabled = true;
+            EpPicker.ItemsSource = season.Episodes;
+            
+        }
+
+        private async void EpisodePickerSelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            
+            var episode = (ITraktEpisode)EpPicker.SelectedItem;
+            
+            if (episode != null)
+            await Navigation.PushAsync(new EpisodePage(episode));
+           
+
         }
     }
 }

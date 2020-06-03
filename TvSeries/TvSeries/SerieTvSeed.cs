@@ -15,6 +15,8 @@ using Xamarin.Forms.Internals;
 using TvSeries.Model;
 using System.Diagnostics;
 using TraktNet.Objects.Get.Seasons;
+using System.Net.Http;
+using System.Net;
 
 namespace TvSeries
 {
@@ -25,8 +27,6 @@ namespace TvSeries
         public static TVDB tvdb = new TVDB("b88ab70eb1e17a369cbe5f494f30cb9c");
 
 
-
-        public static TVDBSharp.Models.Show showImages = new TVDBSharp.Models.Show();
 
 
 
@@ -48,7 +48,7 @@ namespace TvSeries
             foreach (ITraktTrendingShow trendingShow in trendingShowsTop10)
             {
                 
-                    showImages = await tvdb.GetShow((int)trendingShow.Ids.Tvdb);
+                    var showImages = await tvdb.GetShow((int)trendingShow.Ids.Tvdb);
                 
                
                 
@@ -93,40 +93,43 @@ namespace TvSeries
 
 
 
-            var show = await client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());  
-            var seasons = await client.Seasons.GetAllSeasonsAsync(Id, new TraktExtendedInfo().SetFull());
+            var show =  client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());  
+            var seasons = client.Seasons.GetAllSeasonsAsync(Id, new TraktExtendedInfo().SetEpisodes().SetFull());
             
-            // await Task.WhenAny<TraktResponse<ITraktShow>>(show, seasons);
+            await Task.WhenAll(show, seasons);
 
-            var showInfo = show.Value;
+            var showInfo = show.Result.Value;
 
-            var Episodes = await tvdb.GetEpisodes((int)showInfo.Ids.Tvdb);
+           // var Episodes =  tvdb.GetEpisodes((int)showInfo.Ids.Tvdb);
+            
 
-            showImages = await tvdb.GetShow((int)showInfo.Ids.Tvdb);
+            
+            var showImages = await tvdb.GetShow((int)showInfo.Ids.Tvdb);
+            
+            // await Task.WhenAll(Episodes, showImages);
             
             var listSeason = new List<SeasonModel>();
-            foreach(var season in seasons)
+            foreach(var season in seasons.Result.Value)
             {
+                
+               
+                /* var listEpisode = Episodes.Result.Where(ep => ep.AiredSeason == season.Number).Select(ep => new EpisodeModel {
+                     Title = ep.EpisodeName,
+                     Image = ep.EpisodeImage.AbsoluteUri.Replace("http", "https"),
+                     Overview = ep.Overview,
+                     Season = ep.AiredSeason,
+                     Number = ep.AiredEpisodeNumber
+                 }).ToList(); */
+                
                 listSeason.Add(new SeasonModel
                 {
                     Title = season.Title,
+                    Episodes = season.Episodes.ToList(),
                     
-
-                }
-
-                ); 
+                    
+                }); 
             }
-            var listEpisode = new List<EpisodeModel>();
-
-            foreach(var episode in Episodes)
-            {
-                listEpisode.Add(new EpisodeModel
-                {
-                    Title = episode.EpisodeName,
-                    Image = episode.EpisodeImage.AbsoluteUri.Replace("http","https"),
-                    Overview = episode.Overview
-                });
-            }
+           
 
             SerieTvModel serieTvModel = new SerieTvModel()
             {
@@ -136,7 +139,6 @@ namespace TvSeries
                 ImagePath = showImages.Poster.AbsoluteUri.Replace("http", "https"),
                 Genres = showInfo.Genres,
                 Seasons = listSeason,
-                Episodes = listEpisode
                 
 
             };

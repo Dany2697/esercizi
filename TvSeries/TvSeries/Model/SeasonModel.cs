@@ -11,6 +11,8 @@ namespace TvSeries.Model
        
         public string Title { get ; set ; }
        
-        public IEnumerable<ITraktEpisode> Episodes { get ; set ; }
+        public List<ITraktEpisode> Episodes { get; set; }
+
+       
     }
 }

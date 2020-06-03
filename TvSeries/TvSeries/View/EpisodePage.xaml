@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TvSeries.View.EpisodePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DarkRed"  >
+
+
+            
+            <Label Text="{Binding Title}" HorizontalOptions="Start" 
+                   VerticalOptions="Center" FontSize="Title" 
+                   FontAttributes="Bold" />
+
+            <Label Text="{Binding Overview}" HorizontalOptions="Start" FontSize="20"/>
+
+            <Label Text="{Binding Runtime,StringFormat='RUNTIME {0} Mins '}" FontAttributes="Bold"/>
+            <Label Text="{Binding FirstAired,StringFormat='AIRED {0} '}" FontAttributes="Bold" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

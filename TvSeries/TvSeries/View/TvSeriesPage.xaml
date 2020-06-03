@@ -23,24 +23,30 @@
                        VerticalOptions="Center" FontSize="Title" FontAttributes="Bold" />
                         <Label Text="{Binding Year}" FontSize="Subtitle" FontAttributes="Italic" VerticalTextAlignment="End" />
                     </StackLayout>
-                    <StackLayout BindableLayout.ItemsSource="{Binding Genres}" Orientation="Horizontal" >
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Genres}" Wrap="Wrap"   >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding}" FontAttributes="Italic"  />
+                                <Label Text="{Binding}" FontAttributes="Italic" FontSize="18" Margin="5"  />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-                    </StackLayout>
-                    <Label Text="{Binding Description}" HorizontalOptions="Start" />
+                    </FlexLayout>
+                    <Label Text="{Binding Description}" HorizontalOptions="Start" FontSize="20" />
                     <Picker Title="Select Season"
+                            x:Name="SePicker"
                             ItemsSource="{Binding Seasons}"
                             ItemDisplayBinding="{Binding Title}"
-                            SelectedIndexChanged="OnSelectedIndexChanged">
-                      
+                            SelectedIndexChanged="SeasonPickerSelectedIndexChanged"
+                            >
+                       
                     </Picker>
                     <Picker Title="Select Episode"
-                            ItemsSource="{Binding Episodes}"
-                            ItemDisplayBinding="{Binding Title}">
-                        
+                            x:Name="EpPicker"
+                            ItemDisplayBinding="{Binding Number,StringFormat= 'Episode {0}'}"
+                            IsEnabled="False"
+                            SelectedIndexChanged="EpisodePickerSelectedIndexChanged"
+                            >
+
+
                     </Picker>
                 </StackLayout>
                 

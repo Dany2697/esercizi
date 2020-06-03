@@ -22,10 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\EpisodePage.xaml.cs">
+      <DependentUpon>EpisodePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="View\ProfiloPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\SeasonPage.xaml">
+    <EmbeddedResource Update="View\EpisodePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\TvSeriesPage.xaml">
