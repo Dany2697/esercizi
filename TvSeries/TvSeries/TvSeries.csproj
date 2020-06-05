@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Trakt.NET" Version="1.0.0-beta" />
+    <PackageReference Include="Trakt.NET" Version="1.0.0" />
     <PackageReference Include="TVDBSharp" Version="4.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
@@ -22,12 +22,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="MasterDetailPageMain.xaml.cs">
+      <DependentUpon>MasterDetailPageMain.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\EpisodePage.xaml.cs">
       <DependentUpon>EpisodePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="MasterDetailPageMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MasterDetailPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\ProfiloPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

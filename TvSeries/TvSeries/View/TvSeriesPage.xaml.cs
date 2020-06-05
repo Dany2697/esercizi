@@ -9,7 +9,7 @@ using TvSeries.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TvSeries
+namespace TvSeries.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TvSeriesPage : ContentPage
@@ -53,11 +53,25 @@ namespace TvSeries
         private async void EpisodePickerSelectedIndexChanged(object sender, System.EventArgs e)
         {
             
-            var episode = (ITraktEpisode)EpPicker.SelectedItem;
-            
+            var episode = (EpisodeModel)EpPicker.SelectedItem;
             if (episode != null)
-            await Navigation.PushAsync(new EpisodePage(episode));
-           
+            { 
+                var listActor = new List<ActorModel>();
+            var actor = await SerieTvSeed.client.Episodes.GetEpisodePeopleAsync(episode.Show, (uint)episode.Season, (uint)episode.Number);
+
+            foreach (var attore in actor.Value.Cast)
+            {
+                listActor.Add(new ActorModel
+                {
+                    Name = attore.Person.Name,
+                    Character = attore.Character
+                });
+            }
+            episode.Actors = listActor;
+
+                
+           await Navigation.PushAsync(new EpisodePage(episode));
+            }
 
         }
     }

@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TvSeries
+namespace TvSeries.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfiloPage : ContentPage

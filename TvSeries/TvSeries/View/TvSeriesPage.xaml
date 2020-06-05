@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TvSeries.TvSeriesPage"
-             Title="TvSeriesPage">
+             x:Class="TvSeries.View.TvSeriesPage"
+             Title="{Binding Title}">
     <ContentPage.Content>
         
             <StackLayout  x:Name="outerStack" BackgroundColor="DarkRed"  >

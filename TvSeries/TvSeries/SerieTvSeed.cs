@@ -96,38 +96,43 @@ namespace TvSeries
             var show =  client.Shows.GetShowAsync(Id, new TraktExtendedInfo().SetFull());  
             var seasons = client.Seasons.GetAllSeasonsAsync(Id, new TraktExtendedInfo().SetEpisodes().SetFull());
             
+            
             await Task.WhenAll(show, seasons);
 
             var showInfo = show.Result.Value;
-
-           // var Episodes =  tvdb.GetEpisodes((int)showInfo.Ids.Tvdb);
-            
-
-            
             var showImages = await tvdb.GetShow((int)showInfo.Ids.Tvdb);
             
-            // await Task.WhenAll(Episodes, showImages);
+           
             
             var listSeason = new List<SeasonModel>();
+            var listEpisode = new List<EpisodeModel>();
             foreach(var season in seasons.Result.Value)
             {
+                foreach(var episode in season.Episodes)
+                {
+                   
+                    listEpisode.Add(new EpisodeModel
+                    {
+                       
+                        Title = episode.Title,
+                        Overview = episode.Overview,
+                        Number = episode.Number,
+                        Aired = episode.FirstAired,
+                        Runtime = episode.Runtime,
+                        Season = episode.SeasonNumber,
+                        Show = Id
+                    });
+                }
                 
-               
-                /* var listEpisode = Episodes.Result.Where(ep => ep.AiredSeason == season.Number).Select(ep => new EpisodeModel {
-                     Title = ep.EpisodeName,
-                     Image = ep.EpisodeImage.AbsoluteUri.Replace("http", "https"),
-                     Overview = ep.Overview,
-                     Season = ep.AiredSeason,
-                     Number = ep.AiredEpisodeNumber
-                 }).ToList(); */
-                
+
                 listSeason.Add(new SeasonModel
                 {
                     Title = season.Title,
-                    Episodes = season.Episodes.ToList(),
+                    Episodes = listEpisode,
                     
                     
-                }); 
+                });
+                listEpisode = new List<EpisodeModel>();
             }
            
 
@@ -157,7 +162,8 @@ namespace TvSeries
                 Nome = userInfo.Name,
                 Username = userInfo.Username,
                 Citta = userInfo.Location,
-                Eta = userInfo.Age
+                Eta = userInfo.Age,
+                
 
             };
             return profiloModel;

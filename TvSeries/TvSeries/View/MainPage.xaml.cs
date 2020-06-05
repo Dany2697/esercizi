@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using System;
 using TvSeries.ViewModel;
+using TvSeries.View;
 using System.Collections.Generic;
 
 namespace TvSeries
@@ -12,6 +13,7 @@ namespace TvSeries
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        
 
         MainPageViewModel mainPageViewModel = new MainPageViewModel();
 
@@ -20,12 +22,8 @@ namespace TvSeries
         public MainPage() 
         {
             InitializeComponent();
+            mainPageViewModel.Navigation = Navigation;
         }
-       
-
-
-
-
         protected override async void OnAppearing()
         {
             
@@ -38,9 +36,12 @@ namespace TvSeries
         }
         
        
-        private async void Accedi_Clicked(object sender, EventArgs e)
+      /*  private async void Accedi_Clicked(object sender, EventArgs e)
         {
-            try { 
+            if (SerieTvSeed.client.Authentication.IsAuthorized == false)
+            {
+
+                try { 
             var authResult = await WebAuthenticator.AuthenticateAsync(
         new Uri("https://trakt.tv/oauth/authorize?response_type=code&client_id=2c91116b65ac7df04fc5d024d203456bde61a9be5ef2a3437ec975f372009614&redirect_uri=mytraktapp%3A%2F%2Foauth2redirect"),
         new Uri("mytraktapp://oauth2redirect"));
@@ -55,39 +56,21 @@ namespace TvSeries
             {
                 Console.WriteLine(ex.Message);
             }
+ 
+            } else await Navigation.PushAsync(new ProfiloPage());
 
-
-            
-
-            if (SerieTvSeed.client.Authentication.IsAuthorized == true)
-            {
-                profilo.IsEnabled = true;
-
-                
-                
-            }
-        }
-
-
-        private async void Profilo_Clicked(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new ProfiloPage());
-
-
-        }
+        } */
 
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
             if(height > width)
             {
-                MyCarousel.HorizontalOptions = LayoutOptions.Center;
+                
                 
             } 
         }
 
-
-
+        
     }
 }

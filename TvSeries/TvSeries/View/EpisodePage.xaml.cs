@@ -13,7 +13,7 @@ namespace TvSeries.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EpisodePage : ContentPage
     {
-        public EpisodePage(ITraktEpisode episode)
+        public EpisodePage(EpisodeModel episode)
         {
             InitializeComponent();
 

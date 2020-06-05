@@ -10,7 +10,7 @@ namespace TvSeries
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new MasterDetailPageMain();
         }
 
         protected override void OnStart()
